@@ -37,6 +37,8 @@
     filter: drop-shadow(6px 0 12px rgb(5, 10, 16, 0.5));
     padding: 8rem 8rem;
     padding-right: 2rem;
+    position: relative;
+    z-index: 200;
 
     //
 
@@ -82,12 +84,25 @@
   &__map-box {
     width: 60%;
     height: 100%;
+    position: relative;
+    z-index: 100;
 
     @media only screen and (max-width: $bp-md) {
       width: 50%;
     }
     @media only screen and (max-width: 25rem) {
       width: 45%;
+    }
+  }
+  &__map {
+    width: 150%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -9.5vmax;
+
+    @media only screen and (max-width: $bp-md) {
+      left: -10.5vmax;
     }
   }
 }

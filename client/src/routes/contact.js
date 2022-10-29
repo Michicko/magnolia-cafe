@@ -33,7 +33,19 @@ const Contact = () => {
               <SocialIcons theme="dark" />
             </div>
           </div>
-          <div className="contact__map-box"></div>
+          <div className="contact__map-box">
+            <iframe
+              src="https://maps.google.com/maps?q=791 Lexington Ave New York, NY 10065%20Dates%20Products&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+              title="map of our restaurant"
+              frameBorder="0"
+              border="0"
+              cellSpacing="0"
+              allowFullScreen
+              // width="100%"
+              // height="100%"
+              className="contact__map"
+            ></iframe>
+          </div>
         </div>
       </div>
     </PageContainer>

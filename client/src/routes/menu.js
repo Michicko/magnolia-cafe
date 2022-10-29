@@ -42,8 +42,8 @@ const Menu = () => {
   return (
     <section className="menu">
       <div className="menu__container">
+        <h2 className="menu__section-heading sm">Menu</h2>
         <div className="menu__category-section">
-          {/* <Heading heading="Menu" align="left" /> */}
           <h2 className="menu__section-heading">Menu</h2>
           <div className="menu__category-box">
             <ul className="menu__categories">
