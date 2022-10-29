@@ -1,0 +1,57 @@
+@use "sass:math";
+
+$grid-columns: 3;
+
+// base layout
+.container {
+  width: 100%;
+  min-height: 100%;
+  // max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  &.big {
+    max-width: 1020px;
+  }
+  &.small {
+    max-width: 960px;
+  }
+}
+
+// row
+.row {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.col {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+  padding-left: 6rem;
+  @media only screen and (max-width: $bp-md) {
+    flex-wrap: wrap;
+    padding-left: 4rem;
+  }
+  @media only screen and (max-width: $bp-sm) {
+    justify-content: flex-start;
+    padding-left: 2rem;
+  }
+
+  & > * {
+    width: calc(100% / $grid-columns);
+    // padding: 2rem;
+
+    @media only screen and (max-width: $bp-md) {
+      width: calc(100% / ($grid-columns - 1));
+      margin-bottom: 4rem;
+    }
+    @media only screen and (max-width: $bp-sm) {
+      width: calc(100% / ($grid-columns - 2));
+    }
+  }
+}

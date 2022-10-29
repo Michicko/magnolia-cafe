@@ -1,0 +1,510 @@
+.pdd {
+  padding: 4rem 0;
+}
+
+.mgb {
+  margin-bottom: 6rem;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  // padding: 7rem 0;
+}
+
+.section {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  // padding: 4rem 0;
+
+  .heading {
+    width: 100%;
+    text-align: center;
+    // margin-bottom: 6rem;
+
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    &__text {
+      font-size: 1.6rem;
+      color: $light;
+      font-family: "JosefinSans-300";
+
+      @media only screen and (max-width: $bp-md) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  &__treats {
+    @extend .pdd;
+    background: linear-gradient(rgb(5, 10, 16, 0.9), rgb(5, 10, 16, 0.6)),
+      url("../../assets/images/winter.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .heading {
+      @extend .mgb;
+    }
+  }
+
+  &__breakfast {
+    @extend .pdd;
+    background: $primary;
+    .heading {
+      @extend .mgb;
+    }
+  }
+
+  &__menu {
+    @extend .pdd;
+    background: $dark;
+    position: relative;
+    width: 100%;
+    .heading {
+      @extend .mgb;
+    }
+
+    &-img {
+      width: 2rem;
+      height: 1.5rem;
+      position: absolute;
+
+      &.dust {
+        width: auto;
+        height: auto;
+      }
+
+      &.img-1 {
+        bottom: 6vmax;
+        right: 4vmax;
+        transform: rotate(-60deg);
+
+        @media only screen and (max-width: $bp-md) {
+          bottom: 8vmax;
+        }
+      }
+      &.img-3 {
+        bottom: 12vmax;
+        right: 2vmax;
+        transform: rotate(-60deg);
+
+        @media only screen and (max-width: $bp-md) {
+          bottom: 18vmax;
+        }
+      }
+      &.img-2 {
+        top: -2vmax;
+        left: 2vmax;
+        transform: rotate(60deg);
+
+        @media only screen and (max-width: $bp-md) {
+          top: 7vmax;
+          left: -2vmax;
+        }
+      }
+      &.img-5 {
+        top: -7vmax;
+        left: 6vmax;
+        transform: rotate(-70deg);
+
+        @media only screen and (max-width: $bp-md) {
+          top: -2vmax;
+          left: 0;
+        }
+      }
+      &.img-6 {
+        top: -0.2vmax;
+        right: 7.5vmax;
+        transform: rotate(45deg);
+        z-index: 6;
+
+        @media only screen and (max-width: $bp-md) {
+          right: 3vmax;
+        }
+      }
+
+      &.img-7 {
+        top: -3vmax;
+        right: 9vmax;
+        transform: rotate(45deg);
+        z-index: 1;
+
+        @media only screen and (max-width: $bp-md) {
+          top: -6vmax;
+          right: 12vmax;
+        }
+      }
+      &.img-8 {
+        bottom: 10vmax;
+        left: 6.5vmax;
+        transform: rotate(45deg);
+        z-index: 1;
+
+        @media only screen and (max-width: $bp-md) {
+          bottom: 25vmax;
+        }
+      }
+    }
+
+    &-container {
+      padding: 0 8vmax;
+      width: 100%;
+      position: relative;
+      text-align: center;
+
+      @media only screen and (max-width: $bp-md) {
+        padding: 0 4vmax;
+      }
+
+      .products {
+        display: flex;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 4;
+        @media only screen and (max-width: $bp-sm) {
+          flex-wrap: wrap;
+          padding: 0 4vmax;
+        }
+
+        & > * {
+          width: calc(100% / 2);
+
+          @media only screen and (max-width: $bp-sm) {
+            width: 100%;
+          }
+        }
+
+        & > *:first-child {
+          margin-right: 5rem;
+          @media only screen and (max-width: $bp-sm) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // socials
+  &__socials {
+    @extend .pdd;
+    position: relative;
+    height: 62rem;
+    width: 100%;
+    background: $dark;
+    text-align: center;
+    overflow: hidden;
+    padding-bottom: 4rem;
+
+    &-slider {
+      margin-bottom: 4rem;
+    }
+
+    &-img {
+      position: absolute;
+      height: 2.5rem;
+      width: 2.5rem;
+      bottom: 22rem;
+      left: 28vmax;
+
+      @media only screen and (max-width: $bp-md) {
+        bottom: 18rem;
+        left: 20vmax;
+      }
+      @media only screen and (max-width: $bp-sm) {
+        bottom: 18rem;
+        left: 8vmax;
+      }
+    }
+
+    &-btn {
+      background: transparent;
+      border: 1px solid $secondary;
+      height: 2.5rem;
+      width: 2.5rem;
+      position: absolute;
+      bottom: 26rem;
+      right: 8vmax;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media only screen and (max-width: $bp-md) {
+        bottom: 20rem;
+        right: 10vmax;
+      }
+      @media only screen and (max-width: $bp-sm) {
+        bottom: 18.5rem;
+        right: 6vmax;
+      }
+    }
+
+    &-icon {
+      height: 2rem;
+      width: 2rem;
+      color: $secondary;
+    }
+  }
+
+  // about
+
+  &__about {
+    @extend .pdd;
+    background: $dark;
+    min-height: 60%;
+    width: 100%;
+    padding: 4rem 0;
+    padding-bottom: 12rem;
+    position: relative;
+
+    @media only screen and (max-width: $bp-sm) {
+      padding-bottom: 8rem;
+    }
+
+    &-btn {
+      bottom: 4rem;
+      right: 12vmax;
+      position: absolute;
+    }
+
+    .heading {
+      margin-bottom: 2rem !important;
+    }
+
+    .section-heading {
+      margin-bottom: 1rem;
+    }
+
+    &-main {
+      display: flex;
+      padding: 0 4vmax;
+
+      @media only screen and (max-width: $bp-md) {
+        flex-direction: column;
+      }
+
+      & > *:first-child {
+        width: 35%;
+        margin-right: 5%;
+
+        @media only screen and (max-width: $bp-md) {
+          height: 30rem;
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 8rem;
+        }
+        // background: red;
+
+        .about-img-box {
+          position: relative;
+          min-width: 80%;
+          height: 90%;
+          top: 4rem;
+          left: 0;
+          border: 2px solid $secondary;
+          transform: rotate(-4deg);
+
+          @media only screen and (max-width: $bp-sm) {
+            min-width: 70%;
+            left: 1rem;
+          }
+        }
+
+        .about-img {
+          border: 2px solid $secondary;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: -2rem;
+          top: -4rem;
+          transform: rotate(4deg);
+
+          @media only screen and (max-width: $bp-sm) {
+            // left: -2rem;
+          }
+        }
+      }
+      & > *:last-child {
+        width: 60%;
+        @media only screen and (max-width: $bp-md) {
+          width: 100%;
+        }
+      }
+    }
+
+    &-box {
+      .text-box:first-child {
+        margin-bottom: 2rem;
+
+        & > *:nth-child(2) {
+          margin-bottom: 1rem;
+        }
+      }
+      .text {
+        font-size: 1.5rem;
+        color: $light;
+        font-family: "JosefinSans-300";
+      }
+    }
+  }
+
+  // gallery
+  &__gallery {
+    @extend .pdd;
+    background: $dark;
+    min-height: 60%;
+    width: 100%;
+    padding: 4rem 0;
+    position: relative;
+    .heading {
+      @extend .mgb;
+    }
+
+    &-main {
+      width: 100%;
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(9, 8.7%);
+      grid-template-rows: repeat(12, 6vmax);
+      grid-column-gap: 2vmax;
+      grid-row-gap: 2vmax;
+
+      @media only screen and (max-width: $bp-sm) {
+        grid-template-rows: repeat(16, 6vmax);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      & > *:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 4;
+      }
+      & > *:nth-child(2) {
+        grid-column-start: 5;
+        grid-column-end: -1;
+        grid-row-start: 1;
+        grid-row-end: 6;
+      }
+      & > *:nth-child(3) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 4;
+        grid-row-end: 9;
+
+        @media only screen and (max-width: $bp-sm) {
+          grid-column-end: 5;
+        }
+      }
+      & > *:nth-child(4) {
+        grid-column-start: 4;
+        grid-column-end: -1;
+        grid-row-start: 6;
+        grid-row-end: 9;
+
+        @media only screen and (max-width: $bp-sm) {
+          grid-column-start: 5;
+          grid-row-end: 10;
+        }
+      }
+      & > *:nth-child(5) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 9;
+        grid-row-end: -1;
+
+        @media only screen and (max-width: $bp-sm) {
+          grid-column-end: 5;
+          grid-row-end: 13;
+        }
+      }
+      & > *:nth-child(6) {
+        grid-column-start: 4;
+        grid-column-end: 7;
+        grid-row-start: 9;
+        grid-row-end: -1;
+
+        @media only screen and (max-width: $bp-sm) {
+          grid-column-start: 5;
+          grid-row-start: 10;
+          grid-row-end: 15;
+          grid-column-end: -1;
+        }
+      }
+      & > *:nth-child(7) {
+        grid-column-start: 7;
+        grid-column-end: -1;
+        grid-row-start: 9;
+        grid-row-end: -1;
+        @media only screen and (max-width: $bp-sm) {
+          grid-column-start: 1;
+          grid-column-end: 5;
+          grid-row-start: 13;
+          grid-row-end: -1;
+        }
+      }
+    }
+  }
+
+  // restaurant
+  &__restaurant {
+    height: 70rem;
+    width: 100%;
+    background: $dark;
+
+    &-bg {
+      height: 85%;
+      width: 100%;
+      width: 1020px;
+      padding: 0 2rem;
+      margin: 0 auto;
+      transition: width 0.5s ease-in;
+
+      &.seen {
+        width: 100%;
+        padding: 0;
+      }
+    }
+  }
+
+  // reservation
+  &__reservation {
+    @extend .pdd;
+    background: $dark;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    .heading {
+      margin-bottom: 4rem;
+    }
+  }
+
+  // page menu
+  &__page-menu {
+    height: calc(100vh - 7rem);
+    width: 100%;
+    background: $dark;
+    padding: 0 8rem;
+
+    @media only screen and (max-width: $bp-xl) {
+      padding: 0 6rem;
+    }
+
+    @media only screen and (max-width: $bp-lg) {
+      padding: 0 4rem;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      padding: 0 2rem;
+    }
+  }
+}

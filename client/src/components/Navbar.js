@@ -1,0 +1,75 @@
+import { Link } from "react-router-dom";
+import { navlinks } from "../utilities/data";
+import { BsBag } from "react-icons/bs";
+import { FaRegUser } from "react-icons/fa";
+import { FiMenu } from "react-icons/fi";
+import { VscClose } from "react-icons/vsc";
+import { useState } from "react";
+import Sidebar from "./Sidebar";
+
+const Navbar = () => {
+  const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const openSidebar = () => {
+    setIsMenuOpened(true);
+  };
+  const closeSidebar = () => {
+    setIsMenuOpened(false);
+  };
+
+  return (
+    <nav className="nav">
+      <Link className="nav__logo" to="/">
+        Magnolia Cafe
+      </Link>
+      <ul className="nav__list nav__list-main">
+        {navlinks.map((link) => {
+          if (link === "home") {
+            return (
+              <li className="nav__item" key={link}>
+                <Link className="nav__link" to="/">
+                  {link}
+                </Link>
+              </li>
+            );
+          }
+
+          return (
+            <li className="nav__item" key={link}>
+              <Link className="nav__link" to={`/${link}`}>
+                {link}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+      <div className="nav__list nav__list-sub">
+        <button className="nav__cart-btn">
+          <BsBag className="nav__cart-icon" />
+          <div className="nav__cart-total-box">
+            <span className="nav__cart-total-count">4</span>
+          </div>
+        </button>
+        <Link className="nav__btn" to="/reservation">
+          Book a Table
+        </Link>
+        <>
+          {!isMenuOpened && (
+            <FiMenu className="nav__icon nav__menu" onClick={openSidebar} />
+          )}
+          {isMenuOpened && (
+            <VscClose className="nav__icon nav__menu" onClick={closeSidebar} />
+          )}
+        </>
+      </div>
+
+      {/* sidebar */}
+      <Sidebar
+        navlinks={navlinks}
+        isMenuOpened={isMenuOpened}
+        closeSidebar={closeSidebar}
+      />
+    </nav>
+  );
+};
+
+export default Navbar;

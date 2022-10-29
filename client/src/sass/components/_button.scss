@@ -1,0 +1,77 @@
+.btn {
+  min-width: 10rem;
+  height: 4.5rem;
+  padding: 1rem 2rem;
+  outline: none;
+  background: transparent;
+  border: 1px solid $secondary;
+  font-size: 1.5rem;
+  font-family: "JosefinSans-400";
+  color: $secondary;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  text-decoration: none;
+  transition: border 0.4s ease;
+  cursor: pointer;
+
+  &.dark {
+    background: $secondary;
+  }
+
+  &.bdr {
+  }
+
+  &__icon {
+    color: $secondary;
+    height: 2.2rem;
+    width: 2.2rem;
+
+    &.left {
+      margin-left: 0.4rem;
+    }
+    &.right {
+      margin-right: 0.4rem;
+    }
+  }
+
+  &:hover {
+    border: 3px solid $secondary;
+  }
+
+  &:active,
+  &.active {
+    background: $secondary;
+    color: $dark;
+  }
+}
+
+.icon {
+  display: block;
+  height: 2.5rem;
+  width: 2.5rem;
+
+  &.light {
+    color: $light;
+  }
+  &.dark {
+    color: $dark;
+  }
+  &.current,
+  &.secondary {
+    color: $secondary;
+  }
+}
+
+.round-btn {
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $secondary;
+  outline: none;
+  background: transparent;
+  border-radius: 50%;
+}

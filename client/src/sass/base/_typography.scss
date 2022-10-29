@@ -1,0 +1,31 @@
+.secondary-heading {
+  font-family: "Groce";
+  font-size: 2.85vmax;
+  text-transform: uppercase;
+  color: $light;
+
+  &.left {
+    text-align: left;
+  }
+}
+
+.lead {
+  font-size: 1.7rem;
+  color: $secondary;
+  font-family: "Groce";
+  text-transform: uppercase;
+
+  @media only screen and (max-width: $bp-md) {
+    font-size: 1.4rem;
+  }
+  @media only screen and (max-width: $bp-sm) {
+    font-size: 1.2rem;
+  }
+}
+
+.section-heading {
+  font-family: "Groce";
+  font-size: 2.2vmax;
+  text-transform: uppercase;
+  color: $secondary;
+}
