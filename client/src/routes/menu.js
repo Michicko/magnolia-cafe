@@ -8,7 +8,7 @@ import { menuItems } from "../utilities/data";
 import { useState } from "react";
 
 const Menu = () => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(3);
   const current = index;
 
   const categories = [

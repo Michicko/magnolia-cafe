@@ -10,6 +10,7 @@ import Menu from "./routes/menu";
 import Contact from "./routes/contact";
 import Profile from "./routes/profile";
 import Reservation from "./routes/reservation";
+import Product from "./routes/product";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/menu",
         element: <Menu />,
+      },
+      {
+        path: "menu/:productSlug",
+        element: <Product />,
       },
       {
         path: "/contact",

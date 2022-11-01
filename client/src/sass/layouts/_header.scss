@@ -1,6 +1,6 @@
 .header {
   height: -webkit-fill-available;
-  height: 100vh;
+  height: calc(100vh - 7rem);
   min-height: -webkit-fill-available;
   position: relative;
   width: 100%;

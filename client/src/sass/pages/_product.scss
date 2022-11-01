@@ -1,0 +1,193 @@
+.product {
+  min-height: calc(100vh - 7rem);
+  background: $dark;
+  width: 100%;
+  @media only screen and (max-width: $bp-md) {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    padding: 0 8rem;
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    grid-column-gap: 10%;
+    @media only screen and (max-width: $bp-xl) {
+      padding: 0 6rem;
+    }
+
+    @media only screen and (max-width: $bp-lg) {
+      padding: 0 4rem;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+      grid-template-columns: 100%;
+      height: auto;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      padding: 0 2rem;
+    }
+  }
+  &__img-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__content-container {
+    width: 100%;
+    height: 100%;
+    padding: 4rem 0;
+    margin-bottom: 6rem;
+
+    & > *:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+      margin-bottom: 10rem;
+    }
+  }
+
+  &__name {
+    font-size: 2.2rem;
+    color: $secondary;
+    font-family: "Groce";
+    font-weight: unset;
+  }
+
+  &__description {
+    font-size: 1.6rem;
+    color: $light;
+    font-family: "JosefinSans-400";
+    font-weight: unset;
+  }
+
+  &__price {
+    font-size: 2.5rem;
+    color: $secondary;
+    font-weight: unset;
+    font-family: "JosefinSans-500";
+  }
+
+  &__options-heading {
+    font-size: 1.8rem;
+    color: $secondary;
+    font-weight: unset;
+    font-family: "JosefinSans-500";
+    margin-bottom: 1rem;
+  }
+
+  &__ctrls-box {
+    margin-bottom: 1.5rem;
+  }
+
+  &__ctrl {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    width: 15rem;
+    border: 1px solid $secondary;
+  }
+
+  &__btn {
+    height: 4rem;
+    width: 5rem;
+    background: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__input {
+    height: 4rem;
+    width: 5rem;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-right: 1px solid $secondary;
+    border-left: 1px solid $secondary;
+    color: $secondary;
+    font-size: 1.6rem;
+    font-family: "JosefinSans-500";
+    padding-left: 2rem;
+    /* Firefox */
+    appearance: none;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &__options {
+    width: 100%;
+
+    &.flavor {
+      margin-bottom: 3rem;
+    }
+    &-box {
+      margin-bottom: 1rem;
+    }
+    div {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      & > * {
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    &-name {
+      color: $light;
+      font-size: 1.4rem;
+      font-family: "JosefinSans-400";
+      font-family: unset;
+      text-transform: capitalize;
+    }
+  }
+
+  &__radio {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    line-height: 0;
+    background: transparent;
+
+    &-bx {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 1.5rem;
+      width: 1.5rem;
+      border: 1px solid $light;
+      background: transparent;
+      margin-right: 0.5rem;
+      transition: background 0.3s ease-in;
+
+      &::before {
+        height: 0.7rem;
+        width: 0.7rem;
+        content: "";
+        background: transparent;
+        display: block;
+      }
+    }
+
+    &:checked + &-bx::before {
+      background: $light;
+    }
+  }
+}
