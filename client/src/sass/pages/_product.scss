@@ -90,6 +90,39 @@
     height: 4rem;
     width: 15rem;
     border: 1px solid $secondary;
+
+    &.bg {
+      height: 4rem;
+      width: 15rem;
+    }
+
+    &.sm {
+      height: 3rem;
+      width: 12rem;
+    }
+
+    @media only screen and (max-width: $bp-lg) {
+      &.bg {
+        height: 3rem;
+        width: 12rem;
+      }
+
+      &.sm {
+        width: 9rem;
+      }
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      &.bg {
+        height: 3rem;
+        width: 12rem;
+      }
+
+      &.sm {
+        height: 2.5rem;
+        width: 7.5rem;
+      }
+    }
   }
 
   &__btn {
@@ -101,6 +134,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &.bg {
+      height: 4rem;
+      width: 5rem;
+    }
+
+    &.sm {
+      height: 3rem;
+      width: 4rem;
+    }
+
+    @media only screen and (max-width: $bp-lg) {
+      &.bg {
+        height: 3rem;
+        width: 4rem;
+      }
+
+      &.sm {
+        width: 3rem;
+      }
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      &.sm {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+    }
   }
 
   &__input {
@@ -124,6 +185,35 @@
       appearance: none;
       -webkit-appearance: none;
       margin: 0;
+    }
+
+    &.bg {
+      height: 4rem;
+      width: 5rem;
+    }
+
+    &.sm {
+      height: 3rem;
+      width: 4rem;
+      padding-left: 1.5rem;
+    }
+
+    @media only screen and (max-width: $bp-lg) {
+      &.bg {
+        height: 3rem;
+        width: 4rem;
+      }
+
+      &.sm {
+        width: 3rem;
+        padding-left: 1rem;
+      }
+    }
+    @media only screen and (max-width: $bp-sm) {
+      &.sm {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
     }
   }
 

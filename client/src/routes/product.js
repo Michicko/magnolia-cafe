@@ -2,12 +2,11 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { milks, flavors } from "../utilities/data";
 import slugify from "slugify";
 import { useState } from "react";
+import QuantityControl from "../components/QuantityControl";
+import { getKey } from "../utilities/utils";
 
 const Product = () => {
   const [quantity, setQuantity] = useState(1);
-  function getKey() {
-    return Math.trunc(Math.random() * 20000);
-  }
 
   return (
     <div className="product">
@@ -30,21 +29,7 @@ const Product = () => {
           {/* quantity */}
           <div className="product__ctrls-box">
             <h5 className="product__options-heading">Quantity</h5>
-            <div className="product__ctrl">
-              <button className="product__btn">
-                <AiOutlineMinus className="icon secondary" />
-              </button>
-              <input
-                type="number"
-                name="quantity"
-                id="portion"
-                className="product__input"
-                value={quantity}
-              />
-              <button className="product__btn">
-                <AiOutlinePlus className="icon secondary" />
-              </button>
-            </div>
+            <QuantityControl quantity={quantity} size="bg" />
           </div>
           <div className="product__options">
             <h5 className="product__options-heading">Milks</h5>

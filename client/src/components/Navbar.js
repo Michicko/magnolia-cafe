@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import { navlinks } from "../utilities/data";
 import { BsBag } from "react-icons/bs";
-import { FaRegUser } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import { VscClose } from "react-icons/vsc";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
+import { useCartContext } from "../context/cartContext";
 
 const Navbar = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const { openCart } = useCartContext();
   const openSidebar = () => {
     setIsMenuOpened(true);
   };
@@ -43,7 +44,7 @@ const Navbar = () => {
         })}
       </ul>
       <div className="nav__list nav__list-sub">
-        <button className="nav__cart-btn">
+        <button className="nav__cart-btn" onClick={openCart}>
           <BsBag className="nav__cart-icon" />
           <div className="nav__cart-total-box">
             <span className="nav__cart-total-count">4</span>

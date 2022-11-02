@@ -1,14 +1,13 @@
-import Heading from "../components/Heading";
-import PageContainer from "../components/PageContainer";
 import { IoIosArrowDown } from "react-icons/io";
 import CategoryIcon from "../components/CategoryIcon";
 import { Link } from "react-router-dom";
 import slugify from "slugify";
 import { menuItems } from "../utilities/data";
 import { useState } from "react";
+import { getKey } from "../utilities/utils";
 
 const Menu = () => {
-  const [index, setIndex] = useState(3);
+  const [index, setIndex] = useState(0);
   const current = index;
 
   const categories = [
@@ -29,15 +28,6 @@ const Menu = () => {
 
   const facts =
     "Did you know we offer special seasoned menu item? \n Make sure to ask about them next time you vsist us!";
-
-  function getKey() {
-    return Math.trunc(Math.random() * 20000);
-  }
-
-  const getMenuItem = (category) => {
-    const menuItem = menuItems.filter((item) => item.category === category);
-    return menuItem;
-  };
 
   return (
     <section className="menu">

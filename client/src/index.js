@@ -11,6 +11,7 @@ import Contact from "./routes/contact";
 import Profile from "./routes/profile";
 import Reservation from "./routes/reservation";
 import Product from "./routes/product";
+import { CartProvider } from "./context/cartContext";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
   </React.StrictMode>
 );
