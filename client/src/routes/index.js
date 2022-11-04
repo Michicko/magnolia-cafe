@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import Menu from "../components/Menu";
+import MenuSection from "../components/MenuSection";
 import SeasonTreats from "../components/SeasonTreats";
 import SectionBreakfast from "../components/SectionBreakfast";
 import Socials from "../components/Socials";
@@ -11,7 +11,7 @@ const Home = () => {
       <main className="main">
         <SeasonTreats />
         <SectionBreakfast />
-        <Menu />
+        <MenuSection />
         <Socials />
       </main>
     </>

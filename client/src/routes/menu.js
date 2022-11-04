@@ -3,12 +3,16 @@ import CategoryIcon from "../components/CategoryIcon";
 import { Link } from "react-router-dom";
 import slugify from "slugify";
 import { menuItems } from "../utilities/data";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getKey } from "../utilities/utils";
+import Portal from "../Portal";
+import CategoryIconsBox from "../components/CategoryIconsBox";
 
 const Menu = () => {
   const [index, setIndex] = useState(0);
   const current = index;
+  const iconsRef = useRef(null);
+  const menuRef = useRef(null);
 
   const categories = [
     ...new Set(
@@ -17,6 +21,69 @@ const Menu = () => {
       })
     ),
   ];
+
+  const menuCategories = [
+    ...new Set(
+      menuItems.map((item) => {
+        return item.category;
+      })
+    ),
+  ];
+
+  // const [menuCategories, setMenuCategories] = useState(categories);
+
+  const [categoryList, setCategoryList] = useState(categories);
+  const [menuCategoryList, setMenuCategoryList] = useState(menuCategories);
+  const [currentMenu, setCurrentMenu] = useState(categoryList[0]);
+
+  const nextCat = () => {
+    const newCategories = [...categoryList];
+    const newMenuCategories = [...menuCategoryList];
+    const icons = [
+      ...iconsRef.current.querySelectorAll(".menu__category-icon"),
+    ];
+    const menus = [...menuRef.current.querySelectorAll(".menu__slide")];
+    let curr = newCategories[0];
+    let currMenu = newMenuCategories[0];
+    icons[0].classList.remove("current");
+    icons[0].classList.add("anime");
+    icons[1].classList.add("current");
+    menus[0].classList.add("prev");
+
+    let timeOutMenu1 = setTimeout(() => {
+      menus[0].classList.remove("prev");
+      newMenuCategories.splice(0, 1);
+      newMenuCategories.splice(newMenuCategories.length, 0, currMenu);
+      setMenuCategoryList(newMenuCategories);
+      menuRef.current.classList.remove("slideguy");
+    }, 1400);
+
+    let timeOutMenu2 = setTimeout(() => {
+      menuRef.current.classList.add("slideguy");
+    }, 200);
+
+    let timeOutCategory1 = setTimeout(() => {
+      icons[0].classList.remove("anime");
+      newCategories.splice(0, 1);
+      newCategories.splice(newCategories.length, 0, curr);
+      setCategoryList(newCategories);
+      icons[1].classList.remove("current");
+      icons[0].classList.add("current");
+      setCurrentMenu(newCategories[0]);
+      iconsRef.current.classList.add("anime2");
+    }, 600);
+
+    let timeOutCategory2 = setTimeout(() => {
+      iconsRef.current.classList.remove("anime2");
+    }, 2000);
+
+    return () => {
+      clearTimeout(timeOutCategory1);
+      clearTimeout(timeOutCategory2);
+      clearTimeout(timeOutMenu1);
+      clearTimeout(timeOutMenu2);
+    };
+  };
 
   const categoriesWithFlavors = [
     "hot coffee and tea",
@@ -30,69 +97,58 @@ const Menu = () => {
     "Did you know we offer special seasoned menu item? \n Make sure to ask about them next time you vsist us!";
 
   return (
-    <section className="menu">
+    <div className="menu">
       <div className="menu__container">
-        <h2 className="menu__section-heading sm">Menu</h2>
         <div className="menu__category-section">
-          <h2 className="menu__section-heading">Menu</h2>
+          <h2 className="menu__category-heading">Menu</h2>
           <div className="menu__category-box">
-            <ul className="menu__categories">
-              {categories.map((category, i) => {
-                return (
-                  <CategoryIcon
-                    key={getKey()}
-                    name={category}
-                    current={current}
-                    i={i}
-                  />
-                );
-              })}
-            </ul>
+            <CategoryIconsBox
+              categoryList={categoryList}
+              iconsRef={iconsRef}
+              current={current}
+            />
           </div>
-          <button className="round-btn">
+          <button className="round-btn menu__category-btn" onClick={nextCat}>
             <IoIosArrowDown className="icon secondary" />
           </button>
         </div>
         <div className="menu__slider-section">
           <div className="menu__slider">
-            <div className="menu__slider-slides">
-              {categories.map((category, i) => {
+            <div className="menu__slides" ref={menuRef}>
+              {menuCategoryList.map((category, i) => {
                 const menuByCategory = menuItems.filter(
                   (item) => item.category === category
                 );
                 return (
-                  <div
-                    className={
-                      current === i
-                        ? "menu__slider-slide current"
-                        : "menu__slider-slide"
-                    }
-                    key={getKey()}
-                  >
-                    <div className="menu__list-box">
-                      <h3 className="menu__slider-heading">
+                  <div className="menu__slide" key={getKey()}>
+                    <div className="menu__list-container">
+                      <h3 className="menu__list-heading">
                         {category.replace(/And/gi, "&")}
                       </h3>
-                      <ul className="menu__list">
-                        {menuByCategory.map((menuItem) => {
-                          const { name, slug, price, description } = menuItem;
-                          return (
-                            <Link
-                              key={getKey()}
-                              className="menu__item"
-                              to={`/menu/${slug}`}
-                            >
-                              <div>
-                                <p className="menu__item-name">{name}</p>
-                                <p className="menu__item-price">${price}</p>
-                              </div>
-                              {description && (
-                                <p className="menu__item-desc">{description}</p>
-                              )}
-                            </Link>
-                          );
-                        })}
-                      </ul>
+                      <div className="menu__list-box">
+                        <ul className="menu__list">
+                          {menuByCategory.map((menuItem) => {
+                            const { name, slug, price, description } = menuItem;
+                            return (
+                              <Link
+                                key={getKey()}
+                                className="menu__item"
+                                to={`/menu/${slug}`}
+                              >
+                                <div>
+                                  <p className="menu__item-name">{name}</p>
+                                  <p className="menu__item-price">${price}</p>
+                                </div>
+                                {description && (
+                                  <p className="menu__item-desc">
+                                    {description}
+                                  </p>
+                                )}
+                              </Link>
+                            );
+                          })}
+                        </ul>
+                      </div>
                     </div>
                     <div
                       className={`menu__img-section ${
@@ -181,7 +237,7 @@ const Menu = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

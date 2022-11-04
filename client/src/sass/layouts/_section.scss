@@ -360,6 +360,8 @@
     width: 100%;
     padding: 4rem 0;
     position: relative;
+    margin-bottom: 4rem;
+
     .heading {
       @extend .mgb;
     }
@@ -466,11 +468,15 @@
       width: 1020px;
       padding: 0 2rem;
       margin: 0 auto;
-      transition: width 0.5s ease-in;
+      transform: scale(1);
 
       &.seen {
-        width: 100%;
-        padding: 0;
+        transform: scale(1.15);
+        animation-name: view;
+        animation-duration: 1.2s;
+        animation-timing-function: ease;
+        animation-iteration-count: 1;
+        animation-fill-mode: backwards;
       }
     }
   }

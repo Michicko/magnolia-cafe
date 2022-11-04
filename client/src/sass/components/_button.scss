@@ -67,6 +67,13 @@
   &.secondary {
     color: $secondary;
   }
+
+  &.anime {
+    animation-duration: 2s;
+    animation-name: slideupsmall;
+    animation-iteration-count: infinite;
+    // animation-fill-mode: backwards;
+  }
 }
 
 .round-btn {

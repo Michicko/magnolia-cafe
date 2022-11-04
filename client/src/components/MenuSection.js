@@ -2,7 +2,7 @@ import Card from "./Card";
 import { Link } from "react-router-dom";
 import { CgArrowLongRight } from "react-icons/cg";
 
-const Menu = () => {
+const MenuSection = () => {
   const products = [
     {
       name: "cappuccino",
@@ -73,4 +73,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default MenuSection;

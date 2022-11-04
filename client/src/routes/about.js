@@ -1,7 +1,32 @@
 import PageContainer from "../components/PageContainer";
 import { IoIosArrowDown } from "react-icons/io";
+import { useEffect, useRef, useState } from "react";
 
 const About = () => {
+  const restaurantRef = useRef(null);
+  const [seen, setSeen] = useState(false);
+
+  useEffect(() => {
+    const restaurantContainer = restaurantRef.current;
+    const zoomIn = () => {
+      const restaurantRect = restaurantContainer.getBoundingClientRect();
+      const top = restaurantRect.top;
+      const height = restaurantRect.height;
+
+      if (top <= Math.round(height) && !seen) {
+        setSeen(true);
+      } else if (top > height && seen) {
+        setSeen(false);
+      }
+    };
+
+    document.addEventListener("scroll", zoomIn);
+
+    return () => {
+      document.removeEventListener("scroll", zoomIn);
+    };
+  });
+
   return (
     <PageContainer>
       <section className="section section__about">
@@ -52,9 +77,6 @@ const About = () => {
             </div>
           </div>
         </div>
-        <a href="#gallery" className="section__about-btn section__socials-btn">
-          <IoIosArrowDown className="section__socials-icon" />
-        </a>
       </section>
       <section id="gallery" className="section section__gallery">
         <div className="container big">
@@ -102,11 +124,13 @@ const About = () => {
           </div>
         </div>
       </section>
-      <div className="section section__restaurant">
+      <div className="section section__restaurant" ref={restaurantRef}>
         <img
           src={require("../assets/images/restaurant.jpg")}
           alt="restaurant"
-          className="section__restaurant-bg"
+          className={
+            seen ? "section__restaurant-bg seen" : "section__restaurant-bg"
+          }
         />
       </div>
     </PageContainer>

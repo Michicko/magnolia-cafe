@@ -8,7 +8,7 @@ const CategoryIcon = ({ name, current, i }) => {
       name: "breakfast and lunch",
       icon: (
         <FaPizzaSlice
-          className={`icon light ${current === i ? "current" : ""}`}
+          className={`menu__category-icon ${current === i ? "current" : ""}`}
         />
       ),
     },
@@ -16,28 +16,32 @@ const CategoryIcon = ({ name, current, i }) => {
       name: "hot coffee and tea",
       icon: (
         <GiCoffeeCup
-          className={`icon light ${current === i ? "current" : ""}`}
+          className={`menu__category-icon ${current === i ? "current" : ""}`}
         />
       ),
     },
     {
       name: "other hot drinks",
       icon: (
-        <FaCoffee className={`icon light ${current === i ? "current" : ""}`} />
+        <FaCoffee
+          className={`menu__category-icon ${current === i ? "current" : ""}`}
+        />
       ),
     },
     {
       name: "iced coffee and tea",
       icon: (
         <SiBuymeacoffee
-          className={`icon light ${current === i ? "current" : ""}`}
+          className={`menu__category-icon ${current === i ? "current" : ""}`}
         />
       ),
     },
     {
       name: "bakery",
       icon: (
-        <GiCupcake className={`icon light ${current === i ? "current" : ""}`} />
+        <GiCupcake
+          className={`menu__category-icon ${current === i ? "current" : ""}`}
+        />
       ),
     },
   ];

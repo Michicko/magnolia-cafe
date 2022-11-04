@@ -53,6 +53,7 @@ body,
   min-height: 100vh;
   min-height: fill-available;
   min-height: -webkit-fill-available;
+  background: $dark;
 }
 
 .content {
@@ -64,6 +65,7 @@ body,
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {

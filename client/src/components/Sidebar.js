@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
 const Sidebar = ({ navlinks, isMenuOpened, closeSidebar }) => {
-  const links = ["reservations", ...navlinks];
+  const links = ["reservation", ...navlinks];
   return (
     <aside className={isMenuOpened ? "sidebar open" : "sidebar"}>
       <ul className="sidebar__list">
         {links.map((link) => {
-          if (link === "reservations") {
+          if (link === "reservation") {
             return (
               <Link
                 className="sidebar__btn"

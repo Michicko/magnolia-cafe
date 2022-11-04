@@ -1,0 +1,75 @@
+@keyframes slideupsmall {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-4rem);
+    opacity: 0;
+  }
+}
+@keyframes slideupbg {
+  from {
+    transform: translateY(8.5rem);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideout {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-55rem);
+    opacity: 0.3;
+  }
+}
+@keyframes slidein {
+  from {
+    opacity: 0.3;
+    transform: translateY(35rem);
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes menuSlideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-25rem);
+    opacity: 0;
+  }
+}
+
+@keyframes nextSlide {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+@keyframes view {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.15);
+  }
+}
