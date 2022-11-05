@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { navlinks } from "../utilities/data";
 import { BsBag } from "react-icons/bs";
 import { FiMenu } from "react-icons/fi";
@@ -10,15 +10,22 @@ import { useCartContext } from "../context/cartContext";
 const Navbar = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const { openCart } = useCartContext();
+  const [isHome, setIsHome] = useState(false);
   const openSidebar = () => {
     setIsMenuOpened(true);
   };
   const closeSidebar = () => {
     setIsMenuOpened(false);
   };
-  let { pathname } = useLocation();
+  const { pathname } = useLocation();
   const [removeBg, setRemoveBg] = useState(false);
   useEffect(() => {
+    if (pathname === "/") {
+      setIsHome(true);
+    } else {
+      setIsHome(false);
+    }
+
     if (pathname === "/menu") {
       setRemoveBg(true);
     } else {
@@ -38,7 +45,10 @@ const Navbar = () => {
             if (link === "home") {
               return (
                 <li className="nav__item" key={link}>
-                  <Link className="nav__link" to="/">
+                  <Link
+                    className={`nav__link ${isHome ? "active" : ""}`}
+                    to="/"
+                  >
                     {link}
                   </Link>
                 </li>
@@ -47,9 +57,21 @@ const Navbar = () => {
 
             return (
               <li className="nav__item" key={link}>
-                <Link className="nav__link" to={`/${link}`}>
+                {/* <Link className="nav__link" to={`/${link}`}>
                   {link}
-                </Link>
+                </Link> */}
+                <NavLink
+                  className={({ isActive, isPending }) =>
+                    isActive
+                      ? "nav__link active"
+                      : isPending
+                      ? "nav__link pending"
+                      : "nav__link"
+                  }
+                  to={`/${link}`}
+                >
+                  {link}
+                </NavLink>
               </li>
             );
           })}

@@ -7,7 +7,7 @@
   background: $dark;
   width: 0%;
   overflow: hidden;
-  transition: width 0.8s ease;
+  transition: width 1s ease;
 
   &.open {
     width: 100%;
@@ -99,21 +99,26 @@
   &__container {
     width: 0%;
     height: 100%;
-    opacity: 0;
+    // opacity: 0;
     overflow: hidden;
     display: grid;
     grid-template-columns: 63% 30%;
     grid-column-gap: 7%;
     padding: 3rem 8rem;
+    width: 100%;
 
-    transition: width opacity 0.6s ease;
-    transition-delay: 0.2s;
+    // transition: width opacity 0.6s ease;
+    // transition-delay: 0.4s;
+    transform: translateX(-120%);
+    transition: transform 0.6s ease;
+    transition-delay: 0.1s;
   }
 
   &.open &__container {
-    width: 100%;
-    overflow: unset;
-    opacity: 1;
+    // width: 100%;
+    // overflow: unset;
+    // opacity: 1;
+    transform: translateX(0%);
 
     @media only screen and (max-width: $bp-xl) {
       padding: 3rem 6rem;

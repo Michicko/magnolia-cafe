@@ -19,5 +19,4 @@ const Root = () => {
     </UseScrollToTop>
   );
 };
-
 export default Root;

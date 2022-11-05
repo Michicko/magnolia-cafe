@@ -1,7 +1,17 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Sidebar = ({ navlinks, isMenuOpened, closeSidebar }) => {
+  const [isHome, setIsHome] = useState(false);
   const links = ["reservation", ...navlinks];
+  const { pathname } = useLocation();
+  useEffect(() => {
+    if (pathname === "/") {
+      setIsHome(true);
+    } else {
+      setIsHome(false);
+    }
+  }, [pathname]);
   return (
     <aside className={isMenuOpened ? "sidebar open" : "sidebar"}>
       <ul className="sidebar__list">
@@ -21,7 +31,11 @@ const Sidebar = ({ navlinks, isMenuOpened, closeSidebar }) => {
           if (link === "home") {
             return (
               <li className="sidebar__item" key={link}>
-                <Link className="sidebar__link" to="/" onClick={closeSidebar}>
+                <Link
+                  className={`sidebar__link ${isHome ? "active" : ""}`}
+                  to="/"
+                  onClick={closeSidebar}
+                >
                   {link}
                 </Link>
               </li>
@@ -29,13 +43,19 @@ const Sidebar = ({ navlinks, isMenuOpened, closeSidebar }) => {
           }
           return (
             <li className="sidebar__item" key={link}>
-              <Link
+              <NavLink
+                className={({ isActive, isPending }) =>
+                  isActive
+                    ? "sidebar__link active"
+                    : isPending
+                    ? "sidebar__link pending"
+                    : "sidebar__link"
+                }
                 to={`/${link}`}
-                className="sidebar__link"
                 onClick={closeSidebar}
               >
                 {link}
-              </Link>
+              </NavLink>
             </li>
           );
         })}

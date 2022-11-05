@@ -1,6 +1,7 @@
 .secondary-heading {
   font-family: "Groce";
   font-size: 2.85vmax;
+  font-weight: unset;
   text-transform: uppercase;
   color: $light;
 
@@ -13,6 +14,7 @@
   font-size: 1.7rem;
   color: $secondary;
   font-family: "Groce";
+  font-weight: unset;
   text-transform: uppercase;
 
   @media only screen and (max-width: $bp-md) {
@@ -26,6 +28,7 @@
 .section-heading {
   font-family: "Groce";
   font-size: 2.2vmax;
+  font-weight: unset;
   text-transform: uppercase;
   color: $secondary;
 }

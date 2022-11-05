@@ -123,6 +123,10 @@
     &.active {
       font-family: "JosefinSans-400";
     }
+
+    &.pending {
+      color: $secondary;
+    }
   }
 
   &__cart {
