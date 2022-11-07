@@ -4,9 +4,12 @@ import slugify from "slugify";
 import { useState } from "react";
 import QuantityControl from "../components/QuantityControl";
 import { getKey } from "../utilities/utils";
+import { useParams } from "react-router-dom";
 
 const Product = () => {
   const [quantity, setQuantity] = useState(1);
+  const { menuSlug } = useParams();
+  console.log(menuSlug);
 
   return (
     <div className="product">
