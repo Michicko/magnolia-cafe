@@ -13,33 +13,41 @@
     height: 20rem;
     display: grid;
     grid-template-columns: 60% 16% 16%;
-    grid-column-gap: 4%;
+    grid-column-gap: 2vmax;
     margin-bottom: 3rem;
   }
 
   &__bottom {
     width: 100%;
-    height: 20rem;
+    height: 24rem;
     display: grid;
-    grid-template-columns: 32% 32% 28%;
-    grid-template-rows: 10rem 10rem;
-    grid-column-gap: 4%;
-    grid-row-gap: 2rem;
-    grid-template-areas:
-      "a b c"
-      "a b d";
+    grid-template-columns: 60% 34%;
+    grid-column-gap: 2vmax;
 
-    & > *:nth-child(1) {
-      grid-area: a;
+    &-box {
+      width: 100%;
+      height: 20rem;
+
+      &-inner {
+        width: 100%;
+        height: 20rem;
+        &.a {
+          display: grid !important;
+          grid-template-columns: 48% 48% !important;
+          grid-column-gap: 2vmax;
+        }
+        &.b {
+          display: grid;
+          grid-template-columns: 100%;
+          grid-template-rows: 9rem 9rem;
+          grid-row-gap: 2rem;
+        }
+      }
     }
-    & > *:nth-child(2) {
-      grid-area: b;
-    }
-    & > *:nth-child(3) {
-      grid-area: c;
-    }
-    & > *:nth-child(4) {
-      grid-area: d;
+
+    .box-b {
+      width: 100%;
+      height: 20rem;
     }
   }
 

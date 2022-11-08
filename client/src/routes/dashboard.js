@@ -25,55 +25,64 @@ const Dashboard = () => {
             <h3>05</h3>
           </div>
         </div>
-        <h3 className="dashboard__section-heading">Sales Report</h3>
         <div className="dashboard__bottom">
-          <div className="dashboard__card-bt">
-            <span>
-              <AiOutlineDollarCircle className="dashboard__card-bt-icon" />
-            </span>
-            <div>
-              <p>Today's sales</p>
-              <div className="div">
-                <h4>$500.00</h4>
-                <Link to="/orders" className="dashboard__card-bt-link">
-                  view all
-                </Link>
+          <div className="dashbaord__bottom-box">
+            <h3 className="dashboard__section-heading">Sales Report</h3>
+            <div className="dashboard__bottom-box-inner a">
+              <div className="dashboard__card-bt">
+                <span>
+                  <AiOutlineDollarCircle className="dashboard__card-bt-icon" />
+                </span>
+                <div>
+                  <p>Today's sales</p>
+                  <div className="div">
+                    <h4>$500.00</h4>
+                    <Link to="/orders" className="dashboard__card-bt-link">
+                      view all
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="dashboard__card-bt">
+                <span>
+                  <AiOutlineDollarCircle className="dashboard__card-bt-icon" />
+                </span>
+                <div>
+                  <p>Yesterday's sales</p>
+                  <div className="div">
+                    <h4>$299.67</h4>
+                    <Link to="/orders" className="dashboard__card-bt-link">
+                      view all
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div className="dashboard__card-bt">
-            <span>
-              <AiOutlineDollarCircle className="dashboard__card-bt-icon" />
-            </span>
-            <div>
-              <p>Yesterday's sales</p>
-              <div className="div">
-                <h4>$299.67</h4>
-                <Link to="/orders" className="dashboard__card-bt-link">
-                  view all
-                </Link>
+          <div className="dashbaord__bottom-box">
+            <h3 className="dashboard__section-heading">Orders</h3>
+            <div className="dashboard__bottom-box-inner b">
+              <div className="dashboard__card-bt">
+                <div>
+                  <p>Today's Orders</p>
+                  <div className="div">
+                    <h4>20</h4>
+                    <Link to="/orders" className="dashboard__card-bt-link">
+                      view all
+                    </Link>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="dashboard__card-bt">
-            <div>
-              <p>Today's Orders</p>
-              <div className="div">
-                <h4>20</h4>
-                <Link to="/orders" className="dashboard__card-bt-link">
-                  view all
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="dashboard__card-bt">
-            <div>
-              <p>Yesterday's Orders</p>
-              <div className="div">
-                <h4>100</h4>
-                <Link to="/orders" className="dashboard__card-bt-link">
-                  view all
-                </Link>
+              <div className="dashboard__card-bt">
+                <div>
+                  <p>Yesterday's Orders</p>
+                  <div className="div">
+                    <h4>100</h4>
+                    <Link to="/orders" className="dashboard__card-bt-link">
+                      view all
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -84,3 +93,10 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+{
+  <div className="box-b">
+    <h3 className="dashboard__section-heading">Orders</h3>
+    <div className="cot"></div>
+  </div>;
+}
