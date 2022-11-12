@@ -15,6 +15,7 @@ import Report from "./routes/report";
 import Reservation from "./routes/reservation";
 import Reservations from "./routes/reservations";
 import Root from "./routes/root";
+import Seats from "./routes/seats";
 import Settings from "./routes/settings";
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/reservations" element={<Reservations />} />
         <Route path="/menuItems" element={<MenuItems />} />
         <Route path="/combos" element={<Combos />} />
+        <Route path="/seats" element={<Seats />} />
         <Route path="/customers" element={<Customers />} />
         <Route path="/report" element={<Report />} />
         <Route path="/settings" element={<Settings />} />

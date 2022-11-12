@@ -87,3 +87,39 @@
   background: transparent;
   border-radius: 50%;
 }
+
+.orders-panel,
+.optionspanel {
+  position: fixed;
+  z-index: 50;
+  width: 12rem;
+  height: auto;
+  background: #fff;
+  box-shadow: 2px 2px 2px 2px rgba($dark, 0.4);
+  display: block;
+
+  & > * {
+    font-size: 1.4rem;
+    font-family: "JosefinSans-400";
+    font-weight: unset;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    width: 100%;
+    text-transform: capitalize;
+    color: $dark;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary-dark;
+      background: $primary-light;
+    }
+  }
+
+  & > *:first-child {
+    display: block;
+    border-bottom: 1px solid rgba($primary-dark, 0.4) !important;
+  }
+}

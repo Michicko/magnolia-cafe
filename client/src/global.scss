@@ -8,6 +8,8 @@
 
 // components
 @import "./sass/components/button";
+@import "./sass/components/form";
+@import "./sass/components/components";
 
 // layouts
 @import "./sass/layouts/navbar";
@@ -29,4 +31,3 @@
 @import "./sass/pages/menu";
 @import "./sass/pages/product";
 @import "./sass/pages/dashboard";
-@import "./sass/pages/orders";

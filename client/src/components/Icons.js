@@ -2,6 +2,7 @@ import { AiOutlineHome, AiOutlineBarChart } from "react-icons/ai";
 import { BiDish } from "react-icons/bi";
 import { MdBackupTable } from "react-icons/md";
 import { HiOutlineUsers } from "react-icons/hi";
+import { MdEventSeat } from "react-icons/md";
 import {
   IoSettingsOutline,
   IoLogOutOutline,
@@ -30,6 +31,10 @@ const Icons = ({ name }) => {
     {
       name: "combos",
       icon: <IoFastFoodOutline className="cp-root__sidebar-icon" />,
+    },
+    {
+      name: "seats",
+      icon: <MdEventSeat className="cp-root__sidebar-icon" />,
     },
     {
       name: "customers",

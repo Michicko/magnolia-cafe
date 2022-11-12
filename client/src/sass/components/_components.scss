@@ -1,0 +1,328 @@
+.pageHeader {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  display: flex;
+
+  &__heading {
+    font-size: 1.8rem;
+    color: $primary;
+    font-family: "JosefinSans-500";
+    margin-bottom: 1rem;
+    margin-right: auto;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.optionsPanel {
+  position: fixed;
+  z-index: 50;
+  width: 12rem;
+  height: auto;
+  background: #fff;
+  box-shadow: 2px 2px 2px 2px rgba($dark, 0.4);
+  display: block;
+
+  & > * {
+    font-size: 1.4rem;
+    font-family: "JosefinSans-400";
+    font-weight: unset;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    width: 100%;
+    text-transform: capitalize;
+    color: $dark;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary-dark;
+      background: $primary-light;
+    }
+  }
+
+  & > *:first-child {
+    display: block;
+    border-bottom: 1px solid rgba($primary-dark, 0.4) !important;
+  }
+}
+
+.pagecomponent {
+  width: 100%;
+  height: 100%;
+  padding: 0 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  &__container {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.pageContent {
+  &__box {
+    height: 40rem;
+    width: 100%;
+    background: #fff;
+  }
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    padding-top: 1rem;
+
+    &-header {
+      width: 100%;
+      height: 4rem;
+      position: relative;
+      z-index: 20;
+      padding: 0 1rem;
+
+      &-box {
+        width: 100%;
+        height: 100%;
+        background: $primary-light;
+        border-radius: 5px;
+        padding: 0 2.5rem;
+        display: flex;
+        align-items: center;
+      }
+
+      &-headings {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 16rem 15rem 20rem 14rem 14rem 12rem 4rem;
+        align-items: center;
+        list-style: none;
+
+        &.reservations {
+          padding: 0;
+          grid-template-columns: 16rem 15rem 14rem 20rem 14rem 12rem 4rem;
+        }
+
+        h4 {
+          font-size: 1.6rem;
+          font-family: "JosefinSans-500";
+          font-weight: unset;
+          color: $dark;
+        }
+      }
+    }
+
+    &-main {
+      width: 100%;
+      height: calc(100% - 4rem);
+      overflow-y: scroll;
+      padding: 0.5rem 0;
+      position: relative;
+      margin-bottom: 1.2rem;
+
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+      }
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+  }
+}
+
+.listItem {
+  padding: 1.5rem 3rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 16rem 15rem 20rem 14rem 14rem 12rem 4rem;
+  border-bottom: 1px solid #000;
+
+  &.reservations {
+    grid-template-columns: 16rem 15rem 14rem 20rem 14rem 12rem 4rem;
+  }
+
+  & > *:last-child {
+    position: relative;
+  }
+
+  &__btn {
+    background: transparent;
+    outline: none;
+    background: none;
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0;
+    margin: 0;
+    border: none;
+    position: relative;
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      content: "";
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  span {
+    font-size: 1.5rem;
+    font-family: "JosefinSans-400";
+    font-weight: unset;
+    color: $dark;
+    text-transform: capitalize;
+
+    &.pickup {
+      background: $primary-light;
+      color: $primary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 0.4rem;
+      max-width: 70%;
+      line-height: 0;
+      border-radius: 5px;
+    }
+
+    &.delivery {
+      background: $primary-dark;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 0.4rem;
+      max-width: 70%;
+      line-height: 0;
+      border-radius: 5px;
+    }
+
+    &.success {
+      color: $success;
+    }
+
+    &.fail {
+      color: $fail;
+    }
+
+    &.in-progress {
+      color: $in-progres;
+    }
+    &.pending {
+      color: $pending;
+    }
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    color: $dark;
+  }
+}
+
+.filters {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  &__list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    display: block;
+    font-size: 1.4rem;
+    font-family: "JosefinSans-400";
+    font-weight: unset;
+    color: $dark;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0.5rem;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &.active {
+      color: $primary-dark;
+    }
+  }
+
+  & > *:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+.pagination {
+  &-btns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    & > *:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  &-btn {
+    padding: 0.6rem 1.6rem;
+    font-size: 1.4rem;
+    font-family: "JosefinSans-400";
+    font-family: unset;
+    color: $dark;
+    border: 1px solid rgba($dark, 0.1);
+
+    &.first {
+      font-family: "JosefinSans-500";
+      background: #fff;
+
+      &:hover {
+        background: $primary-light;
+      }
+    }
+
+    &.prev {
+      background: $primary-light;
+      &:hover {
+        background: #fff;
+      }
+    }
+
+    &.next {
+      background: $primary-dark;
+      border: none;
+      color: #fff;
+
+      &:hover {
+        background: $in-progres;
+      }
+    }
+
+    &.last {
+      background: $primary-light;
+      font-family: "JosefinSans-500";
+      &:hover {
+        background: #fff;
+      }
+    }
+  }
+}

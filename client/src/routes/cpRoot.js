@@ -3,6 +3,7 @@ import CpSidebar from "../components/CpSidebar";
 import CpMain from "../components/CpMain";
 import CpTopbar from "../components/CpTopbar";
 import { useState } from "react";
+import { MainPageProvider } from "../context/mainPageContext";
 
 const CpRoot = () => {
   const [heading, setHeading] = useState("");
@@ -11,7 +12,9 @@ const CpRoot = () => {
       <CpSidebar />
       <div className="cp-root__content-box">
         <CpTopbar heading={heading} />
-        <CpMain setHeading={setHeading} />
+        <MainPageProvider>
+          <CpMain setHeading={setHeading} />
+        </MainPageProvider>
       </div>
     </div>
   );

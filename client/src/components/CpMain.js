@@ -3,7 +3,9 @@ import { Outlet } from "react-router-dom";
 const CpMain = ({ setHeading }) => {
   return (
     <main className="cp-root__main">
-      <Outlet context={setHeading} />
+      <div className="cp-root__main-container">
+        <Outlet context={setHeading} />
+      </div>
     </main>
   );
 };

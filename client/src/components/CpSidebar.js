@@ -9,6 +9,7 @@ const CpSidebar = () => {
     "reservations",
     "menuItems",
     "combos",
+    "seats",
     "customers",
     "report",
     "settings",
