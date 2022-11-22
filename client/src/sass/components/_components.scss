@@ -18,14 +18,18 @@
   }
 }
 
-.optionsPanel {
+.optionspanel {
   position: fixed;
   z-index: 50;
-  width: 12rem;
+  min-width: 12rem;
   height: auto;
   background: #fff;
   box-shadow: 2px 2px 2px 2px rgba($dark, 0.4);
   display: block;
+
+  &__btn {
+    text-align: left;
+  }
 
   & > * {
     font-size: 1.4rem;
@@ -108,6 +112,18 @@
           grid-template-columns: 16rem 15rem 14rem 20rem 14rem 12rem 4rem;
         }
 
+        &.menuItems {
+          grid-template-columns: 12rem 15rem 18rem 22rem 14rem 8rem 4rem;
+        }
+
+        &.combos {
+          grid-template-columns: 12rem 22rem 15rem 14rem 14rem 8rem 4rem;
+        }
+
+        &.customers {
+          grid-template-columns: 8rem 22rem 22rem 25rem 18rem 4rem;
+        }
+
         h4 {
           font-size: 1.6rem;
           font-family: "JosefinSans-500";
@@ -149,13 +165,31 @@
   display: grid;
   grid-template-columns: 16rem 15rem 20rem 14rem 14rem 12rem 4rem;
   border-bottom: 1px solid #000;
+  align-items: center;
 
   &.reservations {
     grid-template-columns: 16rem 15rem 14rem 20rem 14rem 12rem 4rem;
   }
 
+  &.menuItems {
+    grid-template-columns: 12rem 15rem 18rem 22rem 14rem 8rem 4rem;
+  }
+
+  &.combos {
+    grid-template-columns: 12rem 22rem 15rem 14rem 14rem 8rem 4rem;
+  }
+
+  &.customers {
+    grid-template-columns: 8rem 22rem 22rem 25rem 18rem 4rem;
+  }
+
   & > *:last-child {
     position: relative;
+  }
+
+  &__img {
+    width: 7rem;
+    height: 7rem;
   }
 
   &__btn {
@@ -196,7 +230,7 @@
       align-items: center;
       padding-top: 0.4rem;
       max-width: 70%;
-      line-height: 0;
+      // line-height: 0;
       border-radius: 5px;
     }
 
@@ -208,7 +242,7 @@
       align-items: center;
       padding-top: 0.4rem;
       max-width: 70%;
-      line-height: 0;
+      // line-height: 0;
       border-radius: 5px;
     }
 
@@ -241,10 +275,21 @@
   align-items: center;
   margin-bottom: 1rem;
 
+  &__box {
+    width: 100%;
+    display: flex;
+    margin-bottom: 1rem;
+
+    & > *:nth-child(2) {
+      // margin-right: 0;
+    }
+  }
+
   &__list {
     width: 100%;
     display: flex;
     align-items: center;
+    margin-right: auto;
   }
 
   &__btn {

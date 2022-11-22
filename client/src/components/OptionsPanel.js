@@ -12,7 +12,11 @@ const OptionsPanel = ({ currentListItem, options }) => {
     <div className="optionspanel" style={styles}>
       {options.map((option) => {
         if (option.type === "btn") {
-          return <button key={getKey()}>{option.text}</button>;
+          return (
+            <button className="optionspanel__btn" key={getKey()}>
+              {option.text}
+            </button>
+          );
         }
         const { link } = option;
         const replacedLink = link.replace(":id", currentListItem.id);

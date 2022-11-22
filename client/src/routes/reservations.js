@@ -4,6 +4,7 @@ import ListItem from "../components/ListItem";
 import MainPageContent from "../components/MainPageContent";
 import PageHeader from "../components/PageHeader";
 import SearchInput from "../components/SearchInput";
+import Status from "../components/Status";
 import UseSetHeading from "../hooks/useSetHeading";
 import { getKey } from "../utilities/utils";
 
@@ -12,7 +13,7 @@ const Reservations = () => {
   const [filterIndex, setFilterIndex] = useState(0);
   const index = filterIndex;
   const filters = ["all", "pending", "in-progress", "completed", "failed"];
-  const headerHeadings = ["ID", "Date", "Time", "Customer", "Seats", "Status"];
+  const headerHeadings = ["ID", "Date", "Time", "Customer", "Status", "Seats"];
   const listItems = [
     {
       id: "6ga4ghs",
@@ -54,17 +55,18 @@ const Reservations = () => {
         const { id, date, time, customer: name, seats, status } = listItem;
         return (
           <ListItem
-            listItem={listItem}
-            id={id}
-            date={date}
-            time={time}
-            name={name}
-            status={status}
-            seats={seats}
             key={getKey()}
-            i={i}
             page="reservations"
-          />
+            i={i}
+            listItem={listItem}
+          >
+            <span>#{id}</span>
+            <span>{date}</span>
+            <span>{time}</span>
+            <span>{name}</span>
+            <Status status={status} />
+            <span className={seats}>{seats.join()}</span>
+          </ListItem>
         );
       })}
     </ul>

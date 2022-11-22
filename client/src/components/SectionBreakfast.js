@@ -8,7 +8,7 @@ const SectionBreakfast = () => {
       price: 7,
     },
     {
-      name: "vegetable bogel and cappuccino",
+      name: "vegetable bagel and cappuccino",
       image: "breakfast-2.jpg",
       price: 11,
     },

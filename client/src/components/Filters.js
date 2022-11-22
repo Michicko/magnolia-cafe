@@ -1,6 +1,6 @@
 import { getKey } from "../utilities/utils";
 
-const Filters = ({ filters, index }) => {
+const Filters = ({ filters, index, search, sort }) => {
   return (
     <div className="filters__box">
       <ul className="filters__list">
@@ -15,6 +15,8 @@ const Filters = ({ filters, index }) => {
           );
         })}
       </ul>
+      {search && search}
+      {sort && sort}
     </div>
   );
 };
