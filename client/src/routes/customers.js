@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useOutletContext } from "react-router-dom";
 import Buttons from "../components/Buttons";
 import ListItem from "../components/ListItem";
 import MainPageContent from "../components/MainPageContent";

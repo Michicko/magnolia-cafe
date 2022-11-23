@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Buttons from "../components/Buttons";
+import CreateItem from "../components/CreateItem";
 import Filters from "../components/Filters";
 import ListItem from "../components/ListItem";
 import MainPageContent from "../components/MainPageContent";
 import PageHeader from "../components/PageHeader";
 import SearchInput from "../components/SearchInput";
-import Sort from "../components/Sort";
+import SortSelect from "../components/SortSelect";
 import UseSetHeading from "../hooks/useSetHeading";
 import { getKey } from "../utilities/utils";
 
@@ -100,14 +101,13 @@ const Combos = () => {
     <div className="pagecomponent">
       <div className="pagecomponent__container">
         <PageHeader
-          heading={"Menu Items"}
-          button={<Buttons type={"create"} text="Add Combo" theme={"blue"} />}
+          heading={"MenuItems"}
+          button={<CreateItem link={"/create-combo"} text="Create MenuItem" />}
         />
-        <Filters
-          filters={filters}
-          index={index}
-          search={<SearchInput />}
-          sort={<Sort />}
+        <PageHeader
+          filters={<Filters filters={filters} index={index} />}
+          searchInput={<SearchInput />}
+          sortSelect={<SortSelect />}
         />
         <MainPageContent
           page={"combos"}
