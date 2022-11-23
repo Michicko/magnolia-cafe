@@ -4,7 +4,7 @@ import ListItem from "../components/ListItem";
 import MainPageContent from "../components/MainPageContent";
 import PageHeader from "../components/PageHeader";
 import SearchInput from "../components/SearchInput";
-import Status from "../components/Status";
+import StatusElement from "../components/StatusElement";
 import UseSetHeading from "../hooks/useSetHeading";
 import { getKey } from "../utilities/utils";
 
@@ -52,20 +52,20 @@ const Reservations = () => {
   const listItemsComponent = (
     <ul className="pageContent__list">
       {listItems.map((listItem, i) => {
-        const { id, date, time, customer: name, seats, status } = listItem;
+        const { id, date, time, customer, seats, status } = listItem;
         return (
           <ListItem
-            key={getKey()}
             page="reservations"
-            i={i}
             listItem={listItem}
+            i={i}
+            key={getKey()}
           >
-            <span>#{id}</span>
+            <span>{id}</span>
             <span>{date}</span>
             <span>{time}</span>
-            <span>{name}</span>
-            <Status status={status} />
-            <span className={seats}>{seats.join()}</span>
+            <span>{customer}</span>
+            <StatusElement status={status} />
+            <span>{seats.join(",")}</span>
           </ListItem>
         );
       })}

@@ -8,8 +8,7 @@ import DateGroupInput from "../components/DateGroupInput";
 import Filters from "../components/Filters";
 import MainPageContent from "../components/MainPageContent";
 import ListItem from "../components/ListItem";
-import Status from "../components/Status";
-import Type from "../components/Type";
+import StatusElement from "../components/StatusElement";
 
 const Orders = () => {
   UseSetHeading("Orders");
@@ -36,12 +35,12 @@ const Orders = () => {
       {orders.map((order, i) => {
         const { id, date, name, type, status, amount } = order;
         return (
-          <ListItem key={getKey()} page="orders" i={i} listItem={order}>
+          <ListItem page="orders" listItem={order} i={i} key={getKey()}>
             <span>#{id}</span>
             <span>{date}</span>
             <span>{name}</span>
-            <Type type={type} />
-            <Status status={status} />
+            <span className={type}>{type}</span>
+            <StatusElement status={status} />
             <span>${amount}</span>
           </ListItem>
         );

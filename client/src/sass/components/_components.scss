@@ -3,13 +3,17 @@
   height: auto;
   margin-bottom: 1rem;
   display: flex;
+  align-items: flex-start;
+
+  & > *:first-child {
+    margin-right: auto;
+  }
 
   &__heading {
     font-size: 1.8rem;
     color: $primary;
     font-family: "JosefinSans-500";
     margin-bottom: 1rem;
-    margin-right: auto;
   }
 
   &__container {
@@ -113,15 +117,7 @@
         }
 
         &.menuItems {
-          grid-template-columns: 12rem 15rem 18rem 22rem 14rem 8rem 4rem;
-        }
-
-        &.combos {
-          grid-template-columns: 12rem 22rem 15rem 14rem 14rem 8rem 4rem;
-        }
-
-        &.customers {
-          grid-template-columns: 8rem 22rem 22rem 25rem 18rem 4rem;
+          grid-template-columns: 12rem 15rem 18rem 22rem 14rem 10rem 4rem;
         }
 
         h4 {
@@ -164,25 +160,21 @@
   width: 100%;
   display: grid;
   grid-template-columns: 16rem 15rem 20rem 14rem 14rem 12rem 4rem;
+  align-items: center;
   border-bottom: 1px solid #000;
   align-items: center;
+
+  &__img {
+    height: 6rem;
+    width: 6rem;
+  }
 
   &.reservations {
     grid-template-columns: 16rem 15rem 14rem 20rem 14rem 12rem 4rem;
   }
-
   &.menuItems {
-    grid-template-columns: 12rem 15rem 18rem 22rem 14rem 8rem 4rem;
+    grid-template-columns: 12rem 15rem 18rem 22rem 14rem 10rem 4rem;
   }
-
-  &.combos {
-    grid-template-columns: 12rem 22rem 15rem 14rem 14rem 8rem 4rem;
-  }
-
-  &.customers {
-    grid-template-columns: 8rem 22rem 22rem 25rem 18rem 4rem;
-  }
-
   & > *:last-child {
     position: relative;
   }
@@ -221,6 +213,7 @@
     font-weight: unset;
     color: $dark;
     text-transform: capitalize;
+    line-height: 1.2;
 
     &.pickup {
       background: $primary-light;
@@ -230,7 +223,6 @@
       align-items: center;
       padding-top: 0.4rem;
       max-width: 70%;
-      // line-height: 0;
       border-radius: 5px;
     }
 
@@ -242,7 +234,6 @@
       align-items: center;
       padding-top: 0.4rem;
       max-width: 70%;
-      // line-height: 0;
       border-radius: 5px;
     }
 

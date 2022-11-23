@@ -93,10 +93,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-{
-  <div className="box-b">
-    <h3 className="dashboard__section-heading">Orders</h3>
-    <div className="cot"></div>
-  </div>;
-}

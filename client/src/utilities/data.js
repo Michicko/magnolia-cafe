@@ -65,8 +65,6 @@ exports.menuItems = [
     category: "other hot drinks",
     name: "chai Latte",
     image: "chai-latte-tea.png",
-
-    description: "",
     price: 4.5,
     slug: "chai-latte",
     stock: 7,
@@ -107,8 +105,6 @@ exports.menuItems = [
     category: "bakery",
     name: "cinnamon roll",
     image: "cinnamon-roll.png",
-    description: "",
-
     price: 4,
     slug: "cinnamon-roll",
     stock: 14,

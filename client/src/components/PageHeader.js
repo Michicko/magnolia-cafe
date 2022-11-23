@@ -1,10 +1,19 @@
-const PageHeader = ({ heading, searchInput, dateInput, button }) => {
+const PageHeader = ({
+  filters,
+  heading,
+  searchInput,
+  dateInput,
+  sortSelect,
+  button,
+}) => {
   return (
     <div className="pageHeader">
-      <h3 className="pageHeader__heading">{heading}</h3>
+      {filters}
+      {heading && <h3 className="pageHeader__heading">{heading}</h3>}
       <div className="pageHeader__container">
         {searchInput}
         {dateInput}
+        {sortSelect}
         {button}
       </div>
     </div>
