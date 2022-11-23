@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Buttons from "../components/Buttons";
 import CreateItem from "../components/CreateItem";
 import Filters from "../components/Filters";
 import ListItem from "../components/ListItem";
@@ -12,7 +11,7 @@ import { getKey } from "../utilities/utils";
 
 const Combos = () => {
   UseSetHeading("Combos");
-  const filters = ["all", "in-stock", "out-of-stock"];
+  const filters = ["all", "in-stock", "out-of-stock", "featured"];
   const [filterIndex, setFilterIndex] = useState(0);
   const index = filterIndex;
   const headerHeadings = [
@@ -53,7 +52,6 @@ const Combos = () => {
       price: 12.5,
     },
   ];
-
   const listItemsComponent = (
     <ul className="pageContent__list">
       {listItems.map((listItem, i) => {
@@ -88,7 +86,7 @@ const Combos = () => {
     {
       type: "link",
       link: "/combos/:id",
-      text: "view details",
+      text: "view combo",
     },
     {
       type: "btn",

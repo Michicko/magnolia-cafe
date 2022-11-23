@@ -13,7 +13,7 @@ import { getKey } from "../utilities/utils";
 
 const MenuItems = () => {
   UseSetHeading("Menu Items");
-  const filters = ["all", "in-stock", "out-of-stock"];
+  const filters = ["all", "in-stock", "out-of-stock", "featured"];
   const [filterIndex, setFilterIndex] = useState(0);
   const index = filterIndex;
   const headerHeadings = [

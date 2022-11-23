@@ -110,9 +110,10 @@
         grid-template-columns: 16rem 15rem 20rem 14rem 14rem 12rem 4rem;
         align-items: center;
         list-style: none;
+        padding: 0;
 
         &.reservations {
-          padding: 0;
+          // padding: 0;
           grid-template-columns: 16rem 15rem 14rem 20rem 14rem 12rem 4rem;
         }
 
@@ -120,11 +121,20 @@
           grid-template-columns: 12rem 15rem 18rem 22rem 14rem 10rem 4rem;
         }
 
+        &.combos {
+          grid-template-columns: 10rem 24rem 18rem 15rem 14rem 10rem 4rem;
+        }
+
+        &.customers {
+          grid-template-columns: 10rem 20rem 20rem 24rem 16rem 4rem;
+        }
+
         h4 {
           font-size: 1.6rem;
           font-family: "JosefinSans-500";
           font-weight: unset;
           color: $dark;
+          text-transform: capitalize;
         }
       }
     }
@@ -174,6 +184,12 @@
   }
   &.menuItems {
     grid-template-columns: 12rem 15rem 18rem 22rem 14rem 10rem 4rem;
+  }
+  &.combos {
+    grid-template-columns: 10rem 24rem 18rem 15rem 14rem 10rem 4rem;
+  }
+  &.customers {
+    grid-template-columns: 10rem 20rem 20rem 24rem 16rem 4rem;
   }
   & > *:last-child {
     position: relative;
@@ -245,7 +261,8 @@
       color: $fail;
     }
 
-    &.in-progress {
+    &.in-progress,
+    &.featured {
       color: $in-progres;
     }
     &.pending {
