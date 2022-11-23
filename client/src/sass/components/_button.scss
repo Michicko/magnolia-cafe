@@ -123,3 +123,19 @@
     border-bottom: 1px solid rgba($primary-dark, 0.4) !important;
   }
 }
+
+.create-link {
+  height: 4rem;
+  min-width: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $primary-dark;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: "JosefinSans-400";
+  font-weight: unset;
+  text-transform: capitalize;
+  padding: 0 2rem;
+}

@@ -7,7 +7,7 @@ exports.menuItems = [
     image: "hot-americano.png",
     price: 3.75,
     slug: "americano",
-    stock: 12,
+    stock: 0,
   },
   {
     id: "34628axd",
@@ -62,7 +62,6 @@ exports.menuItems = [
     category: "other hot drinks",
     name: "chai Latte",
     image: "chai-latte-tea.png",
-
     price: 4.5,
     slug: "chai-latte",
     stock: 7,
@@ -100,7 +99,6 @@ exports.menuItems = [
     category: "bakery",
     name: "cinnamon roll",
     image: "cinnamon-roll.png",
-
     price: 4,
     slug: "cinnamon-roll",
     stock: 14,
