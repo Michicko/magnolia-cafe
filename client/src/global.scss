@@ -8,14 +8,11 @@
 
 // components
 @import "./sass/components/button";
-@import "./sass/components/form";
-@import "./sass/components/components";
 
 // layouts
 @import "./sass/layouts/navbar";
 @import "./sass/layouts/sidebar";
 @import "./sass/layouts/page-container";
-@import "./sass/layouts/cp-root";
 @import "./sass/layouts/header";
 @import "./sass/layouts/grid";
 @import "./sass/layouts/section";
@@ -30,4 +27,3 @@
 @import "./sass/pages/reservation";
 @import "./sass/pages/menu";
 @import "./sass/pages/product";
-@import "./sass/pages/dashboard";

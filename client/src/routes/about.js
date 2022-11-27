@@ -1,5 +1,4 @@
 import PageContainer from "../components/PageContainer";
-import { IoIosArrowDown } from "react-icons/io";
 import { useEffect, useRef, useState } from "react";
 
 const About = () => {
