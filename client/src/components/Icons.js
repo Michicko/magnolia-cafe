@@ -1,6 +1,6 @@
 import { AiOutlineHome, AiOutlineBarChart } from "react-icons/ai";
 import { BiDish } from "react-icons/bi";
-import { MdBackupTable } from "react-icons/md";
+import { MdBackupTable, MdPendingActions } from "react-icons/md";
 import { HiOutlineUsers } from "react-icons/hi";
 import { MdEventSeat } from "react-icons/md";
 import {
@@ -8,49 +8,44 @@ import {
   IoLogOutOutline,
   IoFastFoodOutline,
 } from "react-icons/io5";
-import { VscSave } from "react-icons/vsc";
 
 const Icons = ({ name }) => {
   const icons = [
     {
-      name: "dashboard",
-      icon: <AiOutlineHome className="cp-root__sidebar-icon" />,
-    },
-    {
       name: "orders",
-      icon: <VscSave className="cp-root__sidebar-icon" />,
+      icon: <MdPendingActions className="controlpanel__sidebar-icon" />,
     },
     {
       name: "reservations",
-      icon: <MdBackupTable className="cp-root__sidebar-icon" />,
+      icon: <MdBackupTable className="controlpanel__sidebar-icon" />,
     },
     {
       name: "menuItems",
-      icon: <BiDish className="cp-root__sidebar-icon" />,
+      icon: <BiDish className="controlpanel__sidebar-icon" />,
     },
     {
       name: "combos",
-      icon: <IoFastFoodOutline className="cp-root__sidebar-icon" />,
+      icon: <IoFastFoodOutline className="controlpanel__sidebar-icon" />,
     },
     {
       name: "seats",
-      icon: <MdEventSeat className="cp-root__sidebar-icon" />,
+      icon: <MdEventSeat className="controlpanel__sidebar-icon" />,
     },
     {
       name: "customers",
-      icon: <HiOutlineUsers className="cp-root__sidebar-icon" />,
+      icon: <HiOutlineUsers className="controlpanel__sidebar-icon" />,
     },
     {
       name: "report",
-      icon: <AiOutlineBarChart className="cp-root__sidebar-icon" />,
+      icon: <AiOutlineBarChart className="controlpanel__sidebar-icon" />,
     },
     {
       name: "settings",
-      icon: <IoSettingsOutline className="cp-root__sidebar-icon" />,
+      icon: <IoSettingsOutline className="controlpanel__sidebar-icon" />,
     },
     {
       name: "logout",
-      icon: <IoLogOutOutline className="cp-root__sidebar-icon" />,
+      icon: <IoLogOutOutline className="controlpanel__sidebar-icon" />,
     },
   ];
 
