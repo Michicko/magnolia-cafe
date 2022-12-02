@@ -1,6 +1,7 @@
 // abstract
 @import "./sass/abstracts/variables";
 @import "./sass/abstracts/animations";
+@import "./sass/abstracts/extends";
 
 // base
 @import "./sass/base/base";
@@ -8,6 +9,10 @@
 
 // components
 @import "./sass/components/button";
+@import "./sass/components/order-card";
+@import "./sass/components/order-view";
+@import "./sass/components/filter";
+@import "./sass/components/search";
 
 // layouts
 @import "./sass/layouts/navbar";
@@ -15,10 +20,10 @@
 @import "./sass/layouts/page-container";
 @import "./sass/layouts/header";
 @import "./sass/layouts/grid";
-@import "./sass/layouts/controlpanel";
 @import "./sass/layouts/section";
 @import "./sass/layouts/card";
 @import "./sass/layouts/slider";
+@import "./sass/layouts/control-panel";
 @import "./sass/layouts/cart";
 @import "./sass/layouts/footer";
 
@@ -28,3 +33,7 @@
 @import "./sass/pages/reservation";
 @import "./sass/pages/menu";
 @import "./sass/pages/product";
+@import "./sass/pages/orders";
+
+// utilities
+@import "./sass/utils/_utils";

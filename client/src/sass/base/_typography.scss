@@ -34,3 +34,33 @@
 }
 
 // font-family: 'Open Sans', sans-serif;
+
+%card-styles {
+  font-size: 1.4rem;
+  font-family: "Open Sans", sans-serif;
+  white-space: nowrap;
+
+  @media only screen and (max-width: $bp-sm) {
+    white-space: unset;
+  }
+}
+
+.card-heading {
+  @extend %card-styles;
+  font-weight: 500;
+  color: #999;
+}
+
+.card-text {
+  @extend %card-styles;
+  font-weight: 600;
+  color: $dark;
+}
+
+.topbar-heading {
+  font-size: 2rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  columns: $dark;
+  text-transform: capitalize;
+}

@@ -1,0 +1,6 @@
+%card-items-row {
+  display: grid;
+  grid-template-columns: 10rem repeat(auto-fit, minmax(14rem, auto));
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+}

@@ -87,3 +87,55 @@
   background: transparent;
   border-radius: 50%;
 }
+
+.order-btn {
+  height: 3rem;
+  min-width: 6rem;
+  padding: 0 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.3rem;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.outline {
+  border: 1px solid $dark;
+  color: $dark;
+
+  &:hover {
+    background: $dark;
+    color: #fff;
+  }
+}
+
+.blue {
+  background: $blue-dark;
+  color: #fff;
+
+  :hover {
+    background: $blue-light;
+    color: $blue-dark;
+  }
+}
+
+.new {
+  background: rgb(160, 42, 214);
+  color: #fff;
+
+  &:hover {
+    background: rgba(160, 42, 214, 0.8);
+    color: #fff;
+  }
+}

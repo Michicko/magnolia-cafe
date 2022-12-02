@@ -13,39 +13,39 @@ const Icons = ({ name }) => {
   const icons = [
     {
       name: "orders",
-      icon: <MdPendingActions className="controlpanel__sidebar-icon" />,
+      icon: <MdPendingActions className="control-panel__sidebar-icon" />,
     },
     {
       name: "reservations",
-      icon: <MdBackupTable className="controlpanel__sidebar-icon" />,
+      icon: <MdBackupTable className="control-panel__sidebar-icon" />,
     },
     {
-      name: "menuItems",
-      icon: <BiDish className="controlpanel__sidebar-icon" />,
+      name: "menuitems",
+      icon: <BiDish className="control-panel__sidebar-icon" />,
     },
     {
       name: "combos",
-      icon: <IoFastFoodOutline className="controlpanel__sidebar-icon" />,
+      icon: <IoFastFoodOutline className="control-panel__sidebar-icon" />,
     },
     {
       name: "seats",
-      icon: <MdEventSeat className="controlpanel__sidebar-icon" />,
+      icon: <MdEventSeat className="control-panel__sidebar-icon" />,
     },
     {
       name: "customers",
-      icon: <HiOutlineUsers className="controlpanel__sidebar-icon" />,
+      icon: <HiOutlineUsers className="control-panel__sidebar-icon" />,
     },
     {
       name: "report",
-      icon: <AiOutlineBarChart className="controlpanel__sidebar-icon" />,
+      icon: <AiOutlineBarChart className="control-panel__sidebar-icon" />,
     },
     {
       name: "settings",
-      icon: <IoSettingsOutline className="controlpanel__sidebar-icon" />,
+      icon: <IoSettingsOutline className="control-panel__sidebar-icon" />,
     },
     {
       name: "logout",
-      icon: <IoLogOutOutline className="controlpanel__sidebar-icon" />,
+      icon: <IoLogOutOutline className="control-panel__sidebar-icon" />,
     },
   ];
 

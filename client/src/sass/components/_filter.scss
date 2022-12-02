@@ -1,0 +1,59 @@
+.filter {
+  display: flex;
+
+  &__box {
+    display: flex;
+    align-items: center;
+
+    & > *:not(:last-child) {
+      margin-right: 0.3rem;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    background: $grey-dark;
+    align-items: center;
+    height: 3rem;
+    min-width: 8rem;
+    padding: 0 1rem;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    font-family: "Open Sans", sans-serif;
+
+    p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: $dark;
+    }
+  }
+
+  &__btn {
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    background: $grey-light;
+
+    &.bd-l {
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+    &.bd-r {
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+  }
+
+  &__icon {
+    height: 1.6rem;
+    width: 1.6rem;
+
+    &.in-pag {
+      margin-right: 0.3rem;
+    }
+  }
+}

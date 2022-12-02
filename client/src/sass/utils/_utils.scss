@@ -1,0 +1,40 @@
+.cap {
+  text-transform: capitalize;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+%type {
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-family: inherit;
+  color: #fff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+}
+
+.delivery {
+  @extend %type;
+  background: $blue-dark;
+}
+.takeaway {
+  @extend %type;
+  background: $orange;
+}
+
+.logo {
+  height: 3.5rem;
+  width: 3.5rem;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background: $grey-light;
+  margin-top: 1.5rem;
+}

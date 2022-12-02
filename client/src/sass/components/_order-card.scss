@@ -1,0 +1,66 @@
+.order-card {
+  width: 100%;
+  padding: 1rem 2rem;
+  border: 2px solid $grey-dark;
+  border-radius: 5px;
+
+  &__order-details {
+    width: 100%;
+    @extend %card-items-row;
+    padding: 1rem 0;
+    border-bottom: 2px solid $grey-light;
+  }
+
+  &__box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    margin-top: 1rem;
+  }
+
+  &__btn-box {
+    display: flex;
+
+    & > *:first-child {
+      margin-right: 1rem;
+    }
+  }
+
+  &__order-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+
+    & > *:first-child {
+      margin-right: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    & > *:not(:first-child) {
+      margin-right: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+  }
+
+  &__order-item {
+    padding: 0.2rem 0.8rem;
+    background: $grey-dark;
+    border-radius: 4px;
+  }
+
+  &__info-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+  }
+
+  &__additional-info {
+    margin-bottom: 0.5rem;
+  }
+}
